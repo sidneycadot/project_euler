@@ -1,6 +1,14 @@
 #! /usr/bin/env python3
 
 """
+Problem 19: Counting Sundays
+============================
+
+Link: https://projecteuler.net/problem=19
+
+Description
+===========
+
 You are given the following information, but you may prefer to do some research for yourself.
 
 *   1 Jan 1900 was a Monday.
@@ -16,6 +24,9 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 """
 
 def main():
+
+    # Directly count off the days.
+
     y = 1900
     m = 1
     d = 1

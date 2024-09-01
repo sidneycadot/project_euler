@@ -1,6 +1,14 @@
 #! /usr/bin/env python3
 
 """
+Problem 24: Lexicographic Permutations
+======================================
+
+Link: https://projecteuler.net/problem=24
+
+Description
+===========
+
 A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4.
 If all of the permutations are listed numerically or alphabetically, we call it lexicographic order.
 The lexicographic permutations of 0, 1 and 2 are:
@@ -47,14 +55,12 @@ def nth_permutation(elements, n: int):
 
     return (head, ) + tail
 
-
 def main():
 
     # Note: the one millionth element has index 999999.
     arrangement = nth_permutation(list(range(10)), 999999)
     solution = "".join(str(e) for e in arrangement)
     print("solution:", solution)
-
 
 if __name__ == "__main__":
     main()

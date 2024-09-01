@@ -1,6 +1,14 @@
 #! /usr/bin/env python3
 
 """
+Problem 14: Longest Collatz Sequence
+====================================
+
+Link: https://projecteuler.net/problem=14
+
+Description
+===========
+
 The following iterative sequence is defined for the set of positive integers:
 
     n → n/2 (n is even)
@@ -18,7 +26,7 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 
-def collatz(n: int) -> int:
+def collatz_sequence_length(n: int) -> int:
     assert n >= 1
     r = 1
     while n != 1:
@@ -31,14 +39,13 @@ def collatz(n: int) -> int:
 
 def main():
     n_max = None
-    nc_max = 0
+    nlen_max = 0
     for n in range(1, 1000000):
-        nc = collatz(n)
-        if nc > nc_max:
+        nlen = collatz_sequence_length(n)
+        if nlen > nlen_max:
             n_max = n
-            nc_max = nc
+            nlen_max = nlen
     print("solution:", n_max)
-
 
 if __name__ == "__main__":
     main()

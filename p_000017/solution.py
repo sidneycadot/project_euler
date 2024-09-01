@@ -1,8 +1,16 @@
 #! /usr/bin/env python3
 
 """
+Problem 17: Number Letter Counts
+================================
+
+Link: https://projecteuler.net/problem=17
+
+Description
+===========
+
 If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are
-3 + 3 + 5 + 4 + 4 + 19 letters used in total.
+3 + 3 + 5 + 4 + 4 = 19 letters used in total.
 
 If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?
 
@@ -11,6 +19,7 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
 """
 
 def as_english_number(n: int) -> str:
+    assert 0 <= n <= 1000
     if n == 0:
         return "zero"
     if n == 1:
@@ -75,7 +84,6 @@ def as_english_number(n: int) -> str:
         return "{} and {}".format(as_english_number(n - n % 100), as_english_number(n % 100))
     if n == 1000:
         return "one thousand"
-    raise ValueError()
 
 def main():
     solution = len("".join(map(as_english_number, range(1, 1001))).replace("-","").replace(" ", ""))
