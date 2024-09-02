@@ -24,7 +24,7 @@ def unquote(s: str) -> str:
     assert s.endswith('"')
     return s[1:-1]
 
-def score(s: str):
+def name_score(s: str) -> int:
     return sum(ord(c) - ord('A') + 1 for c in s)
 
 def main():
@@ -34,7 +34,7 @@ def main():
 
     names.sort()
 
-    solution = sum(idx * score(name) for (idx, name) in enumerate(names, 1))
+    solution = sum(idx * name_score(name) for (idx, name) in enumerate(names, 1))
     print("solution:", solution)
 
 if __name__ == "__main__":
