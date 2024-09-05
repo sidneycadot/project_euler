@@ -20,7 +20,7 @@ What 12-digit number do you form by concatenating the three terms in this sequen
 
 from pelib import is_prime_cached as is_prime
 
-def main():
+def solve() -> int:
     for p in range(1000, 10000):
         if not is_prime(p):
             continue
@@ -37,9 +37,12 @@ def main():
             rd = sorted(str(r))
             if not (pd == qd == rd):
                 continue
-            solution = str(p) + str(q) + str(r)
-            if solution != "148748178147":
-                break
+            concatenated_pqr = int(str(p) + str(q) + str(r))
+            if concatenated_pqr != 148748178147:  # Skip the example solution
+                return concatenated_pqr
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

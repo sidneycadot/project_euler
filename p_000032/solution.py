@@ -21,7 +21,7 @@ HINT: Some products can be obtained in more than one way so be sure to only incl
 
 import itertools
 
-def main():
+def solve() -> int:
     achievable_products = set()
     for permutation in itertools.permutations(range(1, 10)):
         xs = "".join(map(str, permutation))
@@ -33,7 +33,10 @@ def main():
                 x3 = int(xs[i2:])
                 if x1 * x2 == x3:
                     achievable_products.add(x3)
-    solution = sum(achievable_products)
+    return sum(achievable_products)
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

@@ -31,7 +31,7 @@ def is_truncatable_prime(n: int):
             return False
     return True
 
-def main():
+def solve() -> int:
     # We use the given hint that there are precisely 11 truncatable primes.
     truncatable_primes = []
     candidate = 10
@@ -41,7 +41,10 @@ def main():
         truncatable_primes.append(candidate)
         candidate += 1
 
-    solution = sum(truncatable_primes)
+    return sum(truncatable_primes)
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

@@ -34,21 +34,16 @@ What is the index of the first term in the Fibonacci sequence to contain 1000 di
 """
 
 import itertools
+from pelib import generate_fibonacci
 
-def generate_fibonacci():
-    """Generate the Fibonacci sequence: 1, 1, 2, 3, 5, 8, ..."""
-    (f1, f2) = 0, 1
-    while True:
-        (f1, f2) = (f2, f1 + f2)
-        yield f1
-
-def main():
-
+def solve() -> int:
     for (index, fib) in zip(itertools.count(1), generate_fibonacci()):
         if len(str(fib)) == 1000:
-            break
-    print("solution:", index)
+            return index
 
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

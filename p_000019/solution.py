@@ -23,18 +23,18 @@ You are given the following information, but you may prefer to do some research 
 How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
 """
 
-def main():
+def solve() -> int:
 
     # Directly count off the days.
 
     y = 1900
     m = 1
     d = 1
-    weekday = 1
+    weekday = 0  # Monday
 
     count_sundays = 0
     while y <= 2001:
-        if (1901 <= y <= 2000) and (d == 1) and (weekday == 0):
+        if (1901 <= y <= 2000) and (d == 1) and (weekday == 6):
             count_sundays += 1
         weekday = (weekday + 1) % 7
         if m in (1, 3, 5, 7, 8, 10, 12):
@@ -58,7 +58,11 @@ def main():
         else:
             d += 1
 
-    print("solution:", count_sundays)
+    return count_sundays
+
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

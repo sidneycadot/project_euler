@@ -39,7 +39,7 @@ The product of these numbers is 26×63×78×14 = 178896.
 What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 """
 
-def main():
+def solve() -> int:
 
     data_string = """
     08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
@@ -61,11 +61,12 @@ def main():
     04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36
     20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
     20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
-    01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
+    01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
+    """
 
     data = np.fromstring(data_string, dtype=np.int64, sep=' ').reshape((20, 20))
 
-    solution = 0
+    max_product = 0
     for x in range(20):
         for y in range(20):
             for (dx, dy) in ((+1, 0), (0, +1), (-1, +1), (+1, +1)):
@@ -77,7 +78,11 @@ def main():
                 p = 1
                 for k in range(4):
                     p *= data[y + dy * k][x + dx * k]
-                solution = max(solution, p)
+                max_product = max(max_product, p)
+    return max_product
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

@@ -28,7 +28,8 @@ from pelib import divisors
 def is_abundant(n: int) -> bool:
     return sum(divisors(n)) > n
 
-def main():
+def solve() -> int:
+    # This takes ~ 30 seconds.
     abundant_numbers = [k for k in range(28124) if is_abundant(k)]
 
     can_be_written_as_sum_of_two_abundant_numbers = set(sum(zz) for zz in itertools.product(abundant_numbers, repeat=2))
@@ -37,7 +38,10 @@ def main():
 
     cannot_be_written_as_sum_of_two_abundant_numbers = all_numbers - can_be_written_as_sum_of_two_abundant_numbers
 
-    solution = sum(cannot_be_written_as_sum_of_two_abundant_numbers)
+    return sum(cannot_be_written_as_sum_of_two_abundant_numbers)
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

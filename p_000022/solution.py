@@ -27,14 +27,14 @@ def unquote(s: str) -> str:
 def name_score(s: str) -> int:
     return sum(ord(c) - ord('A') + 1 for c in s)
 
-def main():
-
+def solve() -> int:
     with open("names.txt", "r") as fi:
         names = list(map(unquote, fi.readline().split(",")))
-
     names.sort()
+    return sum(idx * name_score(name) for (idx, name) in enumerate(names, 1))
 
-    solution = sum(idx * name_score(name) for (idx, name) in enumerate(names, 1))
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

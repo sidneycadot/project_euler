@@ -85,8 +85,11 @@ def as_english_number(n: int) -> str:
     if n == 1000:
         return "one thousand"
 
+def solve() -> int:
+    return len("".join(map(as_english_number, range(1, 1001))).replace("-","").replace(" ", ""))
+
 def main():
-    solution = len("".join(map(as_english_number, range(1, 1001))).replace("-","").replace(" ", ""))
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

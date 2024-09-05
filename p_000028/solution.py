@@ -28,9 +28,12 @@ def spiral_diagonal_sum(side: int) -> int:
     """
     return (-9 + side*(8 + side*(3 + 4*side))) // 6
 
+def solve() -> int:
+    return spiral_diagonal_sum(1001)
+
 def main():
-    solution = spiral_diagonal_sum(1001)
-    print("solution:", solution)
+    solution = solve()
+    return solution
 
 if __name__ == "__main__":
     main()

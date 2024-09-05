@@ -36,9 +36,13 @@ def find_pentagonal_pair():
             if is_pentagonal_number(a + b):
                 return (a, b)
 
-def main():
+def solve() -> int:
+    # NOTE: This solver is very slow; the run takes approximately 15 minutes!
     (a, b) = find_pentagonal_pair()
-    solution = b - a
+    return b - a
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

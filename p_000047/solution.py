@@ -25,7 +25,7 @@ Find the first four consecutive integers to have four distinct prime factors eac
 
 from pelib import factorize
 
-def main():
+def solve() -> int:
 
     consecutive = 0
     n = 1
@@ -38,7 +38,10 @@ def main():
             consecutive = 0
         n += 1
 
-    solution = n - consecutive + 1
+    return n - consecutive + 1
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

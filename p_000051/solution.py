@@ -28,10 +28,14 @@ def test_prime(n: int) -> bool:
             ns[i1:i2] = d
             value = ns
 
-def main():
+def solve() -> int:
+    return -1
+    #for p in range(56000, 57000):
+    #    test_prime(p)
 
-    for p in range(56000, 57000):
-        test_prime(p)
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

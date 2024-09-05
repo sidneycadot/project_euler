@@ -16,12 +16,15 @@ What is the 10001st prime number?
 
 from pelib import next_prime
 
-def main():
+def solve() -> int:
     p = 0
     for c in range(10001):
         p = next_prime(p)
+    return p
 
-    print("solution:", p)
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

@@ -21,9 +21,12 @@ import math
 def is_curious(n: int):
     return sum(math.factorial(int(c)) for c in str(n)) == n
 
-def main():
+def solve() -> int:
     # From eight digits onwards, the minimum value an n-digit number can have exceeds the maximum value attainable by multiplying its digits.
-    solution = sum(n for n in range(3, 10000000) if is_curious(n))
+    return sum(n for n in range(3, 10000000) if is_curious(n))
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

@@ -21,7 +21,7 @@ If the product of these four fractions is given in its lowest common terms, find
 
 from fractions import Fraction
 
-def main():
+def solve() -> int:
     product = Fraction(1)
     for numerator in range(10, 100):
         for denominator in range(10, 100):
@@ -32,7 +32,10 @@ def main():
                     if len(nc) == 1 and len(dc) == 1:
                         if numerator * int(dc) == denominator * int(nc):
                             product *= Fraction(numerator, denominator)
-    solution = product.denominator
+    return product.denominator
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

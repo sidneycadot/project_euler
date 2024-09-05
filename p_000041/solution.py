@@ -29,13 +29,14 @@ def generate_candidates():
         for permutation in itertools.permutations(descending_digits):
             yield int("".join(map(str, permutation)))
 
-def main():
+def solve() -> int:
     for p in generate_candidates():
         if is_prime(p):
-            break
-    else:
-        p = None
-    print("solution:", p)
+            return p
+
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

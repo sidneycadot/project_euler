@@ -30,12 +30,16 @@ def is_circular_prime(n: int) -> bool:
 
     return True
 
-def main():
+def solve() -> int:
     count = 0
     for k in range(1000000):
         if is_circular_prime(k):
             count += 1
-    print("solution:", count)
+    return count
+
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

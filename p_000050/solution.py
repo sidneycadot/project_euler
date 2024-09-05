@@ -23,7 +23,7 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 import itertools
 from pelib import is_prime_cached as is_prime
 
-def main():
+def solve() -> int:
 
     primes = [p for p in range(1000000) if is_prime(p)]
     prime_sum = list(itertools.accumulate(primes, initial=0))
@@ -46,7 +46,10 @@ def main():
                 max_range_sums.append(range_sum)
 
     assert len(max_range_sums) == 1
-    solution = max_range_sums[0]
+    return max_range_sums[0]
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

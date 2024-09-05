@@ -17,15 +17,21 @@ By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 """
 
-def main():
-    fib = [1, 2]
-    while True:
-        next_entry = fib[-2] + fib[-1]
-        if next_entry > 4000000:
-            break
-        fib.append(next_entry)
+from pelib import generate_fibonacci
 
-    solution = sum(f for f in fib if f % 2 == 0)
+def solve() -> int:
+    fg = generate_fibonacci()
+    sum_of_even_terms = 0
+    while True:
+        fib = next(fg)
+        if fib > 4000000:
+            break
+        if fib % 2 == 0:
+            sum_of_even_terms += fib
+    return sum_of_even_terms
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

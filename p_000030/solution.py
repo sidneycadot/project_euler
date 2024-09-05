@@ -25,7 +25,7 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
 def sum_of_digit_powers(n: int, exponent: int) -> int:
     return sum(int(c)**exponent for c in str(n))
 
-def main():
+def solve() -> int:
     """We only need to consider numbers below a certain limit, as the sum of the fifth powers of digits is bounded by num_digits(n)*9^5
     which grows logarithmically.
 
@@ -34,7 +34,10 @@ def main():
 
     limit = 6*9**5
 
-    solution = sum(k for k in range(2, limit + 1) if k == sum_of_digit_powers(k, 5))
+    return sum(k for k in range(2, limit + 1) if k == sum_of_digit_powers(k, 5))
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

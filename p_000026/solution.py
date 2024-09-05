@@ -40,7 +40,7 @@ def decimal_expansion_repeat_length(d: int):
 
     return len(prev) - prev[remainder]
 
-def main():
+def solve() -> int:
 
     (d_max, dc_max) = (None, 0)
 
@@ -49,7 +49,11 @@ def main():
         if dc > dc_max:
             (d_max, dc_max) = (d, dc)
 
-    print("solution:", d_max)
+    return d_max
+
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

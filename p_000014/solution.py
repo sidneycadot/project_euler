@@ -37,7 +37,7 @@ def collatz_sequence_length(n: int) -> int:
         r += 1
     return r
 
-def main():
+def solve() -> int:
     n_max = None
     nlen_max = 0
     for n in range(1, 1000000):
@@ -45,7 +45,11 @@ def main():
         if nlen > nlen_max:
             n_max = n
             nlen_max = nlen
-    print("solution:", n_max)
+    return n_max
+
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

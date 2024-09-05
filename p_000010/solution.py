@@ -16,8 +16,11 @@ Find the sum of all the primes below two million.
 
 from pelib import prime_sieve
 
+def solve() -> int:
+    return sum(prime_sieve(2000000))
+
 def main():
-    solution = sum(prime_sieve(2000000))
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

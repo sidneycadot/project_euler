@@ -30,14 +30,17 @@ def unquote(s: str) -> str:
 def word_value(s: str) -> int:
     return sum(ord(c) - ord('A') + 1 for c in s)
 
-def main():
+def solve() -> int:
 
     with open("words.txt", "r") as fi:
         words = list(map(unquote, fi.readline().split(",")))
 
     triangle_words = [word for word in words if is_triangle_number(word_value(word))]
 
-    solution = len(triangle_words)
+    return len(triangle_words)
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

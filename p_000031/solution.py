@@ -30,9 +30,12 @@ def generate_solutions(coins, target: int):
             # Return solutions with the smallest coin *not* included.
             yield from generate_solutions(coins[1:], target)
 
-def main():
+def solve() -> int:
     coins = (1, 2, 5, 10, 20, 50, 100, 200)
-    solution = len(list(generate_solutions(coins, 200)))
+    return len(list(generate_solutions(coins, 200)))
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

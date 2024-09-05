@@ -41,8 +41,7 @@ def find_solutions(p: int):
 
     return solutions
 
-def main():
-
+def solve() -> int:
     p_max = None
     p_max_value = 0
     for p in range(1000):
@@ -51,8 +50,11 @@ def main():
         if p_value > p_max_value:
             p_max = p
             p_max_value = p_value
+    return p_max
 
-    print("solution:", p_max)
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

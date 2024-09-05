@@ -41,7 +41,7 @@ def count_generated_primes(a: int, b: int) -> int:
         n = n + 1
     return n
 
-def main():
+def solve() -> int:
 
     a_max = None
     b_max = None
@@ -53,7 +53,10 @@ def main():
             if count > count_max:
                 (a_max, b_max, count_max) = (a, b, count)
 
-    solution = a_max * b_max
+    return a_max * b_max
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

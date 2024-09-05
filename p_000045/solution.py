@@ -43,10 +43,14 @@ def generate_matches():
         else:
             h = next(hg)
 
-def main():
+def solve() -> int:
     match_generator = generate_matches()
     for _ in range(3):
-        solution = next(match_generator)
+        match = next(match_generator)
+    return match
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

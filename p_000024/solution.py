@@ -55,11 +55,13 @@ def nth_permutation(elements, n: int):
 
     return (head, ) + tail
 
-def main():
-
+def solve() -> int:
     # Note: the one millionth element has index 999999.
     arrangement = nth_permutation(list(range(10)), 999999)
-    solution = "".join(str(e) for e in arrangement)
+    return int("".join(str(e) for e in arrangement))
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

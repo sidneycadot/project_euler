@@ -29,11 +29,14 @@ def generate_pythagorean_triplets():
                     yield (a, b, c)
         c += 1
 
-def main():
+def solve() -> int:
     for (a, b, c) in generate_pythagorean_triplets():
         if a + b + c == 1000:
             break
-    solution = a * b * c
+    return a * b * c
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

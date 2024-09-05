@@ -126,3 +126,10 @@ def digit_sum(n: int, base: int=10) -> int:
         s += (n % base)
         n //= base
     return s
+
+def generate_fibonacci():
+    """Generate the Fibonacci sequence: 1, 1, 2, 3, 5, 8, ..."""
+    (f1, f2) = 0, 1
+    while True:
+        (f1, f2) = (f2, f1 + f2)
+        yield f1

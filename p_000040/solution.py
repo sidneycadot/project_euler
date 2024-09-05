@@ -20,8 +20,7 @@ If d[n] represents the nth digit of the fractional part, find the value of the f
     d[1] × d[10] × d[100] × d[1000] × d[10000] × d[100000] × d[1000000]
 """
 
-
-def main():
+def solve() -> int:
 
     s_join = ["."]
 
@@ -35,7 +34,10 @@ def main():
 
     d = "".join(s_join)
 
-    solution = int(d[1]) * int(d[10]) * int(d[100]) * int(d[1000]) * int(d[10000]) * int(d[100000]) * int(d[1000000])
+    return int(d[1]) * int(d[10]) * int(d[100]) * int(d[1000]) * int(d[10000]) * int(d[100000]) * int(d[1000000])
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

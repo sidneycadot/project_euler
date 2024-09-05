@@ -37,7 +37,7 @@ Find the thirteen adjacent digits in the 1000-digit number that have the greates
 
 from pelib import product
 
-def main():
+def solve() -> int:
 
     number_string = (
         "73167176531330624919225119674426574742355349194934"
@@ -62,7 +62,10 @@ def main():
         "71636269561882670428252483600823257530420752963450"
     )
 
-    solution = max(product(map(int, number_string[k:k+13])) for k in range(len(number_string) - 12))
+    return max(product(map(int, number_string[k:k+13])) for k in range(len(number_string) - 12))
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

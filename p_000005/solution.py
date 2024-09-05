@@ -23,10 +23,14 @@ def gcd(a: int, b: int) -> int:
 def lcm(a: int, b: int) -> int:
     return (a * b) // gcd(a, b)
 
-def main():
-    solution = 1
+def solve() -> int:
+    result = 1
     for k in range(1, 21):
-        solution = lcm(solution, k)
+        result = lcm(result, k)
+    return result
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

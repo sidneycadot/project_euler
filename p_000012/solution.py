@@ -38,11 +38,14 @@ def divisor_count(n: int) ->int:
         r *= (e + 1)
     return r
 
-def main():
+def solve() -> int:
     for t in generate_triangle_numbers():
-        if (divisor_count(t)) > 500:
-            break
-    print("solution:", t)
+        if divisor_count(t) > 500:
+            return t
+
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

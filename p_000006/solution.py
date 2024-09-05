@@ -22,11 +22,14 @@ Hence the difference between the sum of the squares of the first ten natural num
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 """
 
-def main():
+def solve() -> int:
     numbers = list(range(1, 101))
     sum_of_squares = sum(k**2 for k in numbers)
     square_of_sum = sum(numbers) ** 2
-    solution = square_of_sum - sum_of_squares
+    return square_of_sum - sum_of_squares
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

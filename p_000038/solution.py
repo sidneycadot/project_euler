@@ -39,14 +39,15 @@ def is_pandigital_multiple(n: int):
             if ms == ns:
                 return True
 
-def main():
-
+def solve() -> int:
     for candidate in itertools.permutations(range(9, 0, -1)):
-        candidate = "".join(map(str, candidate))
+        candidate = int("".join(map(str, candidate)))
         if is_pandigital_multiple(candidate):
-            break
+            return candidate
 
-    print("solution:", candidate)
+def main():
+    solution = solve()
+    print("solution:", solution)
 
 if __name__ == "__main__":
     main()

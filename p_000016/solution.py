@@ -13,8 +13,11 @@ Description
 What is the sum of the digits of the number 2^1000?
 """
 
+def solve() -> int:
+    return sum(int(c) for c in str(2**1000))
+
 def main():
-    solution = sum(int(c) for c in str(2**1000))
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

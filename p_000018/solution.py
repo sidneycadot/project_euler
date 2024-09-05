@@ -61,8 +61,7 @@ def max_route(triangle: TriangleLookup, r: int, c: int):
         return triangle(r, c) + max_route(triangle, r - 1, c - 1)
     return triangle(r, c) + max(max_route(triangle, r - 1, c - 1), max_route(triangle, r - 1, c))
 
-
-def main():
+def solve() -> int:
     data_string = """
                                   75
                                  95 64
@@ -83,7 +82,10 @@ def main():
 
     triangle = TriangleLookup(map(int, data_string.split()))
 
-    solution = max(max_route(triangle, 14, c) for c in range(15))
+    return max(max_route(triangle, 14, c) for c in range(15))
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

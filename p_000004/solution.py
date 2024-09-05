@@ -19,7 +19,7 @@ def is_palindrome(n: int) -> bool:
     r = s[::-1]
     return s == r
 
-def main():
+def solve() -> int:
     palindromes = set()
     for p in range(100, 1000):
         for q in range(100, 1000):
@@ -27,7 +27,10 @@ def main():
             if is_palindrome(n):
                 palindromes.add(n)
 
-    solution = max(palindromes)
+    return max(palindromes)
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

@@ -16,9 +16,12 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 def is_multiple_of_3_or_5(n: int):
 	return (n % 3 == 0) or (n % 5 == 0)
 
-def main():
+def solve() -> int:
 	problem_size = 1000
-	solution = sum(k for k in range(1, problem_size) if is_multiple_of_3_or_5(k))
+	return sum(k for k in range(1, problem_size) if is_multiple_of_3_or_5(k))
+
+def main():
+	solution = solve()
 	print("solution:", solution)
 
 if __name__ == "__main__":

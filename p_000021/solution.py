@@ -24,9 +24,11 @@ def is_amicable_number(n: int) -> bool:
     q = sum(divisors(n))
     return (q != n) and sum(divisors(q)) == n
 
-def main():
+def solve() -> int:
+    return sum(k for k in range(10000) if is_amicable_number(k))
 
-    solution = sum(k for k in range(10000) if is_amicable_number(k))
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

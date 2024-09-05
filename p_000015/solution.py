@@ -25,8 +25,11 @@ def walks(x: int, y: int) -> int:
         return 0
     return walks(x, y - 1) + walks(x - 1, y)
 
+def solve() -> int:
+    return walks(20, 20)
+
 def main():
-    solution = walks(20, 20)
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

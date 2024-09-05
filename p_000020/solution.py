@@ -19,9 +19,11 @@ Find the sum of the digits in the number 100!.
 import math
 from pelib import digit_sum
 
-def main():
+def solve() -> int:
+    return digit_sum(math.factorial(100))
 
-    solution = digit_sum(math.factorial(100))
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":

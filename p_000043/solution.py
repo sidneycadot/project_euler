@@ -27,11 +27,11 @@ Find the sum of all 0 to 0 pandigital numbers with this property.
 
 import itertools
 
-def main():
+def solve() -> int:
     # The problem statement does not mention if numbers with a leading zero are to be considered.
-    # It doesn't matter in the end; no such numbers have the described propery.
+    # It doesn't matter in the end; no such numbers have the described property.
 
-    solution = 0
+    sum_of_numbers = 0
 
     digits = range(0, 10)
     for permutation in itertools.permutations(digits):
@@ -46,8 +46,12 @@ def main():
         if int(ns[6:9]) % 13 != 0: continue
         if int(ns[7:10]) % 17 != 0: continue
 
-        solution += int(ns)
+        sum_of_numbers += int(ns)
 
+    return sum_of_numbers
+
+def main():
+    solution = solve()
     print("solution:", solution)
 
 if __name__ == "__main__":
