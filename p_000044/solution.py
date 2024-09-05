@@ -19,25 +19,7 @@ Find the pair of pentagonal numbers, P[j] and P[k], for which their sum and diff
 what is the value of D?
 """
 
-import math
-
-def pentagonal_index(pentagonal : int) -> int:
-    return round((1.0 + math.sqrt(1 + 24 * pentagonal)) / 6.0)
-
-def pentagonal_from_index(index : int) -> int:
-    return (index * (3 * index - 1)) // 2
-
-def is_pentagonal_number(maybe_pentagonal: int) -> bool:
-    pentagonal = pentagonal_from_index(pentagonal_index(maybe_pentagonal))
-    return maybe_pentagonal == pentagonal
-
-def generate_pentagonal_numbers():
-    n = 1
-    p = 0
-    while True:
-        p += n
-        n += 3
-        yield p
+from pelib import generate_pentagonal_numbers, is_pentagonal_number
 
 def find_pentagonal_pair():
     # Find a pentagonal pair whose difference and sum is also pentagonal.

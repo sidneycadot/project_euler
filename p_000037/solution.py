@@ -18,21 +18,7 @@ NOTE:
 2, 3, 5, and 7 are not considered to be truncatable primes.
 """
 
-import functools
-
-@functools.cache
-def is_prime(n: int) -> bool:
-    """Check if the given number is a prime, by trial division."""
-
-    if n < 2:
-        return False
-
-    d = 2
-    while d * d <= n:
-        if n % d == 0:
-            return False
-        d += 1
-    return True
+from pelib import is_prime_cached as is_prime
 
 def is_truncatable_prime(n: int):
     if not is_prime(n):

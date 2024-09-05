@@ -20,31 +20,10 @@ It can be verified that T[285] = P[165] = H[143] = 40755.
 Find the next triangle number that is also pentagonal and hexagonal.
 """
 
-def generate_triangle_numbers():
-    n = 1
-    p = 0
-    while True:
-        p += n
-        n += 1
-        yield p
-
-def generate_pentagonal_numbers():
-    n = 1
-    p = 0
-    while True:
-        p += n
-        n += 3
-        yield p
-
-def generate_hexagonal_numbers():
-    n = 1
-    p = 0
-    while True:
-        p += n
-        n += 4
-        yield p
+from pelib import generate_triangle_numbers, generate_pentagonal_numbers, generate_hexagonal_numbers
 
 def generate_matches():
+
     tg = generate_triangle_numbers()
     pg = generate_pentagonal_numbers()
     hg = generate_hexagonal_numbers()

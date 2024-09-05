@@ -23,9 +23,7 @@ Find the sum of all the positive integers which cannot be written as the sum of 
 """
 
 import itertools
-
-def divisors(n: int) -> list[int]:
-    return [d for d in range(1, n) if n % d == 0]
+from pelib import divisors
 
 def is_abundant(n: int) -> bool:
     return sum(divisors(n)) > n

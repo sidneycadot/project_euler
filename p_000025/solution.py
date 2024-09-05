@@ -33,16 +33,21 @@ The 12th term, F(12) is the first term to contain three digits.
 What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
 """
 
+import itertools
+
+def generate_fibonacci():
+    """Generate the Fibonacci sequence: 1, 1, 2, 3, 5, 8, ..."""
+    (f1, f2) = 0, 1
+    while True:
+        (f1, f2) = (f2, f1 + f2)
+        yield f1
+
 def main():
 
-    idx = 2
-    (f1, f2) = 1, 1
-
-    while len(str(f2)) != 1000:
-        (f1, f2) = (f2, f1 + f2)
-        idx += 1
-
-    print("solution:", idx)
+    for (index, fib) in zip(itertools.count(1), generate_fibonacci()):
+        if len(str(fib)) == 1000:
+            break
+    print("solution:", index)
 
 
 if __name__ == "__main__":

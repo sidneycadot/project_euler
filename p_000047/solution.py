@@ -23,22 +23,7 @@ The first three consecutive numbers to have three distinct prime factors are:
 Find the first four consecutive integers to have four distinct prime factors each. What is the first of these numbers?
 """
 
-def factorize(n: int) -> list[tuple[int, int]]:
-    """Returns the factorization of the argument as a list of (prime, exponent) pairs."""
-    assert n >= 1
-    factors = []
-    p = 2
-    while p * p <= n:
-        e = 0
-        while n % p == 0:
-            e += 1
-            n //= p
-        if e != 0:
-            factors.append((p, e))
-        p += 1
-    if n != 1:
-        factors.append((n, 1))
-    return factors
+from pelib import factorize
 
 def main():
 

@@ -35,11 +35,7 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 """
 
-def product(z):
-    r = 1
-    for ze in z:
-        r *= ze
-    return r
+from pelib import product
 
 def main():
 
@@ -66,11 +62,7 @@ def main():
         "71636269561882670428252483600823257530420752963450"
     )
 
-    solution = -1
-    for k in range(len(number_string) - 12):
-        sub = number_string[k:k+13]
-        value = product(int(c) for c in sub)
-        solution = max(solution, value)
+    solution = max(product(map(int, number_string[k:k+13])) for k in range(len(number_string) - 12))
     print("solution:", solution)
 
 if __name__ == "__main__":

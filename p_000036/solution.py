@@ -19,7 +19,6 @@ Find the sum of all numbers, less than one million, which are palindromic in bas
 def is_palindrome(s: str) -> bool:
     return s == s[::-1]
 
-
 def main():
     solution = sum(k for k in range(1000000) if is_palindrome(f"{k:d}") and is_palindrome(f"{k:b}"))
     print("solution:", solution)

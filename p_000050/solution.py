@@ -21,21 +21,7 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 """
 
 import itertools
-import functools
-
-@functools.cache
-def is_prime(n: int) -> bool:
-    """Check if the given number is a prime, by trial division."""
-
-    if n < 2:
-        return False
-
-    d = 2
-    while d * d <= n:
-        if n % d == 0:
-            return False
-        d += 1
-    return True
+from pelib import is_prime_cached as is_prime
 
 def main():
 
@@ -59,7 +45,6 @@ def main():
                     max_range_sums.clear()
                 max_range_sums.append(range_sum)
 
-    print(max_range_sums)
     assert len(max_range_sums) == 1
     solution = max_range_sums[0]
     print("solution:", solution)

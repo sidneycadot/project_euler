@@ -18,21 +18,7 @@ but there is one other 4-digit increasing sequence.
 What 12-digit number do you form by concatenating the three terms in this sequence?
 """
 
-import functools
-
-@functools.cache
-def is_prime(n: int) -> bool:
-    """Check if the given number is a prime, by trial division."""
-
-    if n < 2:
-        return False
-
-    d = 2
-    while d * d <= n:
-        if n % d == 0:
-            return False
-        d += 1
-    return True
+from pelib import is_prime_cached as is_prime
 
 def main():
     for p in range(1000, 10000):

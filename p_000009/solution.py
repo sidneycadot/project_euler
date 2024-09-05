@@ -30,7 +30,6 @@ def generate_pythagorean_triplets():
         c += 1
 
 def main():
-
     for (a, b, c) in generate_pythagorean_triplets():
         if a + b + c == 1000:
             break

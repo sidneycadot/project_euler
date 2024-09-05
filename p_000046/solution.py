@@ -23,18 +23,7 @@ It turns out that the conjecture was false.
 What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
 """
 
-def is_prime(n: int) -> bool:
-    """Check if the given number is a prime, by trial division."""
-
-    if n < 2:
-        return False
-
-    d = 2
-    while d * d <= n:
-        if n % d == 0:
-            return False
-        d += 1
-    return True
+from pelib import is_prime
 
 def has_property(n: int) -> bool:
     k = 1

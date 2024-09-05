@@ -20,7 +20,7 @@ Using words.txt (right click and 'Save Link/Target As...'), a 16K text file cont
 how many are triangle words?
 """
 
-import math
+from pelib import is_triangle_number
 
 def unquote(s: str) -> str:
     assert s.startswith('"')
@@ -30,16 +30,12 @@ def unquote(s: str) -> str:
 def word_value(s: str) -> int:
     return sum(ord(c) - ord('A') + 1 for c in s)
 
-def is_triangle_number(n: int) -> bool:
-    k = round(0.5 * (math.sqrt(1 + 8 * n) - 1.0))
-    return k * (k + 1) // 2 == n
-
 def main():
 
     with open("words.txt", "r") as fi:
         words = list(map(unquote, fi.readline().split(",")))
 
-    triangle_words = [word for word in words if is_triangle_number(word_value(word)) ]
+    triangle_words = [word for word in words if is_triangle_number(word_value(word))]
 
     solution = len(triangle_words)
     print("solution:", solution)

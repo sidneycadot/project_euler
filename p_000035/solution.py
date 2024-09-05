@@ -16,17 +16,7 @@ There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 73, 79, and 97
 How many circular primes are there below one million?
 """
 
-def is_prime(n: int) -> bool:
-    """Check if the given number is a prime, by trial division."""
-    if n < 2:
-        return False
-
-    d = 2
-    while d * d <= n:
-        if n % d == 0:
-            return False
-        d += 1
-    return True
+from pelib import is_prime
 
 def is_circular_prime(n: int) -> bool:
     if not is_prime(n):

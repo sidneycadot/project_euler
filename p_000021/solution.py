@@ -18,8 +18,7 @@ The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
 Evaluate the sum of all the amicable numbers under 10000.
 """
 
-def divisors(n: int) -> list[int]:
-    return [d for d in range(1, n) if n % d == 0]
+from pelib import divisors
 
 def is_amicable_number(n: int) -> bool:
     q = sum(divisors(n))

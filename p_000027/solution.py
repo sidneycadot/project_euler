@@ -30,17 +30,7 @@ Find the product of the coefficients, a and b, for the quadratic expression that
 starting with n=0.
 """
 
-def is_prime(n: int) -> bool:
-    """Check if the given number is a prime, by trial division."""
-    if n < 2:
-        return False
-
-    d = 2
-    while d * d <= n:
-        if n % d == 0:
-            return False
-        d += 1
-    return True
+from pelib import is_prime
 
 def count_generated_primes(a: int, b: int) -> int:
     n = 0

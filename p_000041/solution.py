@@ -16,19 +16,7 @@ What is the largest n-digit pandigital prime that exists?
 """
 
 import itertools
-
-def is_prime(n: int) -> bool:
-    """Check if the given number is a prime, by trial division."""
-
-    if n < 2:
-        return False
-
-    d = 2
-    while d * d <= n:
-        if n % d == 0:
-            return False
-        d += 1
-    return True
+from pelib import is_prime
 
 def generate_candidates():
     # Generate candidates in descending order.
