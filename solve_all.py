@@ -58,12 +58,21 @@ known_solutions: dict[int, int] = {
     47  : 134043,
     48  : 9110846700,
     49  : 296962999629,
-    50  : 997651
+    50  : 997651,
+    #
+    52  : 142857,
+    53  : 4075,
+    56  : 972,
+    67  : 7273,
+    76  : 190569291,
+    92  : 8581146,
+    97  : 8739992577,
+    99  : 709
 }
 
 def main():
     for (problem_nr, correct_solution) in known_solutions.items():
-        if problem_nr <= 0:
+        if problem_nr <= 50:
             continue
         directory = f"p_{problem_nr:06d}"
         module_name = f"{directory}.solution"

@@ -62,7 +62,7 @@ def max_route(triangle: TriangleLookup, r: int, c: int):
     return triangle(r, c) + max(max_route(triangle, r - 1, c - 1), max_route(triangle, r - 1, c))
 
 def solve() -> int:
-    data_string = """
+    triangle_string = """
                                   75
                                  95 64
                                17 47 82
@@ -80,7 +80,7 @@ def solve() -> int:
             04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
     """
 
-    triangle = TriangleLookup(map(int, data_string.split()))
+    triangle = TriangleLookup(map(int, triangle_string.split()))
 
     return max(max_route(triangle, 14, c) for c in range(15))
 
