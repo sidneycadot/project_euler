@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 
 """
-Problem 47: Distinct Prime Factors
-==================================
+Problem 47: Distinct Primes Factors
+===================================
 
 Link: https://projecteuler.net/problem=47
 

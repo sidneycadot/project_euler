@@ -29,7 +29,7 @@ def test_prime(n: int) -> bool:
             value = ns
 
 def solve() -> int:
-    return -1
+    return -1 # Known wrong.
     #for p in range(56000, 57000):
     #    test_prime(p)
 

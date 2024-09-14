@@ -29,7 +29,7 @@ def is_abundant(n: int) -> bool:
     return sum(divisors(n)) > n
 
 def solve() -> int:
-    # This takes ~ 30 seconds.
+    # This takes ~ 34 seconds.
     abundant_numbers = [k for k in range(28124) if is_abundant(k)]
 
     can_be_written_as_sum_of_two_abundant_numbers = set(sum(zz) for zz in itertools.product(abundant_numbers, repeat=2))

@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 
 """
-Problem 34: Digit Digit Factorials
-==================================
+Problem 34: Digit Factorials
+============================
 
 Link: https://projecteuler.net/problem=34
 
@@ -16,10 +16,10 @@ Find the sum of all numbers which are equal to the sum of the factorial of their
 Note: As 1! = 1 and 2! = 2 are not sums they are not included.
 """
 
-import math
+from pelib import factorial
 
 def is_curious(n: int):
-    return sum(math.factorial(int(c)) for c in str(n)) == n
+    return sum(factorial(int(c)) for c in str(n)) == n
 
 def solve() -> int:
     # From eight digits onwards, the minimum value an n-digit number can have exceeds the maximum value attainable by multiplying its digits.

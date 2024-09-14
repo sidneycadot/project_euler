@@ -16,11 +16,10 @@ For example, 10! = 10×9×...×3×2×1 = 3628800, and the sum of the digits in t
 Find the sum of the digits in the number 100!.
 """
 
-import math
-from pelib import digit_sum
+from pelib import factorial, digit_sum
 
 def solve() -> int:
-    return digit_sum(math.factorial(100))
+    return digit_sum(factorial(100))
 
 def main():
     solution = solve()

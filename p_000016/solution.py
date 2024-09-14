@@ -13,8 +13,10 @@ Description
 What is the sum of the digits of the number 2^1000?
 """
 
+from pelib import digit_sum
+
 def solve() -> int:
-    return sum(int(c) for c in str(2**1000))
+    return digit_sum(2**1000)
 
 def main():
     solution = solve()

@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 
 """
-Problem 53: Combinatorial Selections
-====================================
+Problem 53: Combinatoric Selections
+===================================
 
 Link: https://projecteuler.net/problem=53
 
@@ -22,10 +22,10 @@ It is not until n = 23, that a value exceeds one-million: Binomial(23, 10) = 114
 How many, not necessarily distinct, values Binomial(n, 3) for 1 ≤ n ≤ 100 , are greater than one-million?
 """
 
-import math
+from pelib import binomial
 
 def solve() -> int:
-    values = [math.comb(n, r) for n in range(1, 101) for r in range(n + 1)]
+    values = [binomial(n, r) for n in range(1, 101) for r in range(n + 1)]
     return len([v for v in values if v > 1000000])
 
 def main():

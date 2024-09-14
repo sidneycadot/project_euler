@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 """
-Problem 28: Distinct Powers
+Problem 29: Distinct Powers
 ===========================
 
 Link: https://projecteuler.net/problem=29

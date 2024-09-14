@@ -1,8 +1,8 @@
 #! /usr/bin/env python3
 
 """
-Problem 12: Highly Divisible Triangle Number
-============================================
+Problem 12: Highly Divisible Triangular Number
+==============================================
 
 Link: https://projecteuler.net/problem=12
 

@@ -18,21 +18,7 @@ The lexicographic permutations of 0, 1 and 2 are:
 What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 """
 
-import math
-
-def generate_lexicographical_order(elements):
-    """Generate all permutations of distinct objects.
-
-    If the elements are sorted, the elements will be yielded in lexicographical order.
-
-    This is equivalent to the itertools.permutations() iterator.
-    """
-    if len(elements) == 0:
-        yield ()
-    else:
-        for (i, head) in enumerate(elements):
-            tail_elements = elements[:i] + elements[i + 1:]
-            yield from ((head, ) + tail for tail in generate_lexicographical_order(tail_elements))
+from pelib import factorial
 
 def nth_permutation(elements, n: int):
     """Return the nth permutation of the given elements."""
@@ -42,7 +28,7 @@ def nth_permutation(elements, n: int):
     if sz == 0:
         return ()
 
-    period = math.factorial(sz - 1)
+    period = factorial(sz - 1)
 
     head_index = (n // period) % sz
     tail_index = n % period

@@ -20,10 +20,8 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 from pelib import generate_fibonacci
 
 def solve() -> int:
-    fg = generate_fibonacci()
     sum_of_even_terms = 0
-    while True:
-        fib = next(fg)
+    for fib in generate_fibonacci():
         if fib > 4000000:
             break
         if fib % 2 == 0:

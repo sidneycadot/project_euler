@@ -26,16 +26,14 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 
+import functools
+
+@functools.cache
 def collatz_sequence_length(n: int) -> int:
     assert n >= 1
-    r = 1
-    while n != 1:
-        if n % 2 == 0:
-            n //= 2
-        else:
-            n = 3 * n + 1
-        r += 1
-    return r
+    if n == 1:
+        return 1
+    return 1 + collatz_sequence_length(n // 2 if n % 2 == 0 else 3 * n + 1)
 
 def solve() -> int:
     n_max = None
