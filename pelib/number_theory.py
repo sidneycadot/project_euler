@@ -1,6 +1,9 @@
 """Number-theoretical functions."""
 
+import math
 import functools
+
+from .miscellaneous import product
 
 def is_prime(n: int) -> bool:
     """Check if the given number is a prime.
@@ -78,3 +81,17 @@ def powermod(a: int, b: int, modulo: int) -> int:
         a = (a * a) % modulo
         b //= 2
     return r
+
+def gcd(*integers) -> int:
+    """Return the greatest common divisor of the integer arguments."""
+    return math.gcd(*integers)
+
+def lcm(*integers) -> int:
+    """Return the least common multiple of the integer arguments."""
+    return math.lcm(*integers)
+
+def euler_phi(n: int) -> int:
+    """Return the number of positive integers < n that are relative prime to n."""
+    if n == 0:
+        return 0
+    return product(p ** (e - 1) * (p - 1) for (p, e) in factorize(abs(n)))

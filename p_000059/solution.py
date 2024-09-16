@@ -34,6 +34,8 @@ def encrypt_decrypt(source: list[int], key: list[int]) -> list[int]:
     return [source[k] ^ key[k % len(key)] for k in range(len(source))]
 
 def solve() -> int:
+    # We assume that the string ' the ' occurs in the decrypted text.
+    # This indeed yields the single, unique solution to the problem.
     with open("0059_cipher.txt", "r") as fi:
         data = fi.read()
     ciphertext = list(map(int, data.split(",")))

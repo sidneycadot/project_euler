@@ -29,14 +29,10 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 """
 
-from pelib import factorize, generate_triangle_numbers
+from pelib import product, factorize, generate_triangle_numbers
 
 def divisor_count(n: int) ->int:
-    assert n >= 1
-    r = 1
-    for (p, e) in factorize(n):
-        r *= (e + 1)
-    return r
+    return product(e + 1 for (p, e) in factorize(n))
 
 def solve() -> int:
     for t in generate_triangle_numbers():

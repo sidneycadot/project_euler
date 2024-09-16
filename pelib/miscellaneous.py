@@ -37,3 +37,18 @@ def generate_lexicographical_order(elements):
         for (i, head) in enumerate(elements):
             tail_elements = elements[:i] + elements[i + 1:]
             yield from ((head, ) + tail for tail in generate_lexicographical_order(tail_elements))
+
+def floor_of_sqrt(n: int) -> int:
+    return math.isqrt(n)
+    #if n == 0:
+    #    return 0
+    #k = 0
+    #while (4**(k+1)) <= n:
+    #    k += 1
+    #sqrt_approx = (2**k)
+    #walk = sqrt_approx
+    #while walk > 1:
+    #    walk //= 2
+    #    if (sqrt_approx + walk) ** 2 <= n:
+    #        sqrt_approx += walk
+    #return sqrt_approx

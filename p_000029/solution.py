@@ -9,7 +9,7 @@ Link: https://projecteuler.net/problem=29
 Description
 ===========
 
-Consider all integer combinations of a^b for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:
+Consider all integer combinations of a**b for 2 ≤ a ≤ 5 and 2 ≤ b ≤ 5:
 
     2^2 =  4, 2^3 =   8, 2^4 =  16, 2^5 =   32
     3^2 =  9, 3^3 =  27, 3^4 =  81, 3^5 =  243

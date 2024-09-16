@@ -23,7 +23,12 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
 """
 
 def sum_of_digit_powers(n: int, exponent: int) -> int:
-    return sum(int(c)**exponent for c in str(n))
+    """Return the sum of the digits in n to the power 'exponent'."""
+    s = 0
+    while n != 0:
+        s += (n % 10) ** exponent
+        n //= 10
+    return s
 
 def solve() -> int:
     """We only need to consider numbers below a certain limit, as the sum of the fifth powers of digits is bounded by num_digits(n)*9^5

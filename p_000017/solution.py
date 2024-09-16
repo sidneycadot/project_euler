@@ -17,64 +17,42 @@ NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-
 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
 """
 
+english_numbers_to_words = {
+    0: "zero",
+    1: "one",
+    2: "two",
+    3: "three",
+    4: "four",
+    5: "five",
+    6: "six",
+    7: "seven",
+    8: "eight",
+    9: "nine",
+    10: "ten",
+    11: "eleven",
+    12: "twelve",
+    13: "thirteen",
+    14: "fourteen",
+    15: "fifteen",
+    16: "sixteen",
+    17: "seventeen",
+    18: "eighteen",
+    19: "nineteen",
+    20: "twenty",
+    30: "thirty",
+    40: "forty",
+    50: "fifty",
+    60: "sixty",
+    70: "seventy",
+    80: "eighty",
+    90: "ninety"
+}
+
 def as_english_number(n: int) -> str:
     assert 0 <= n <= 1000
-    if n == 0:
-        return "zero"
-    if n == 1:
-        return "one"
-    if n == 2:
-        return "two"
-    if n == 3:
-        return "three"
-    if n == 4:
-        return "four"
-    if n == 5:
-        return "five"
-    if n == 6:
-        return "six"
-    if n == 7:
-        return "seven"
-    if n == 8:
-        return "eight"
-    if n == 9:
-        return "nine"
-    if n == 10:
-        return "ten"
-    if n == 11:
-        return "eleven"
-    if n == 12:
-        return "twelve"
-    if n == 13:
-        return "thirteen"
-    if n == 14:
-        return "fourteen"
-    if n == 15:
-        return "fifteen"
-    if n == 16:
-        return "sixteen"
-    if n == 17:
-        return "seventeen"
-    if n == 18:
-        return "eighteen"
-    if n == 19:
-        return "nineteen"
-    if n == 20:
-        return "twenty"
-    if n == 30:
-        return "thirty"
-    if n == 40:
-        return "forty"
-    if n == 50:
-        return "fifty"
-    if n == 60:
-        return "sixty"
-    if n == 70:
-        return "seventy"
-    if n == 80:
-        return "eighty"
-    if n == 90:
-        return "ninety"
+    s = english_numbers_to_words.get(n)
+    if s is not None:
+        return s
     if n < 100:
         return "{}-{}".format(as_english_number(n - n % 10), as_english_number(n % 10))
     if n < 1000:

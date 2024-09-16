@@ -9,7 +9,7 @@ Link: https://projecteuler.net/problem=69
 Description
 ===========
 
-Euler's totient function, [sometimes called the phi function], is defined as the number of positive integers not exceeding n which are
+Euler's totient function, φ(n) [sometimes called the phi function], is defined as the number of positive integers not exceeding n which are
 relatively prime to n. For example, as 1, 2, 4, 5, 7, and 8, are all less than or equal to nine and relatively prime to nine, φ(9)=6.
 
     n     Relatively Prime    φ(n)    n/φ(n)
@@ -28,14 +28,8 @@ It can be seen that n=6 produces a maximum n/φ(n) for n ≤ 10.
 Find the value of n ≤ 1000000 for which n/φ(n) is a maximum.
 """
 
-from pelib import factorize, product
+from pelib import euler_phi
 from fractions import Fraction
-
-def euler_phi(n: int) -> int:
-    """Return the number of positive integers < n that are relative prime to n."""
-    if n == 0:
-        return 0
-    return product(p ** (e - 1) * (p - 1) for (p, e) in factorize(abs(n)))
 
 def solve() -> int:
     max_ratio_solution = max((Fraction(n, euler_phi(n)), n) for n in range(1, 1 + 1000000))

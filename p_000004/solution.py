@@ -20,14 +20,13 @@ def is_palindrome(n: int) -> bool:
     return s == r
 
 def solve() -> int:
-    palindromes = set()
+    max_palindrome = 0  # Assume we will beat this.
     for p in range(100, 1000):
         for q in range(100, 1000):
             n = p * q
             if is_palindrome(n):
-                palindromes.add(n)
-
-    return max(palindromes)
+                max_palindrome = max(max_palindrome, n)
+    return max_palindrome
 
 def main():
     solution = solve()

@@ -14,20 +14,10 @@ Description
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 """
 
-def gcd(a: int, b: int) -> int:
-
-    while a != 0:
-        (a, b) = (b % a, a)
-    return b
-
-def lcm(a: int, b: int) -> int:
-    return (a * b) // gcd(a, b)
+from pelib import lcm
 
 def solve() -> int:
-    result = 1
-    for k in range(1, 21):
-        result = lcm(result, k)
-    return result
+    return lcm(*range(1, 21))
 
 def main():
     solution = solve()

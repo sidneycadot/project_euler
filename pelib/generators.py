@@ -40,7 +40,7 @@ def generate_hexagonal_numbers():
         n += 4
         yield p
 
-def generate_fibonacci():
+def generate_fibonacci_sequence():
     """Generate the Fibonacci sequence: 1, 1, 2, 3, 5, 8, ..."""
     (f1, f2) = 0, 1
     while True:
