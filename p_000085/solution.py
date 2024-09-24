@@ -29,9 +29,6 @@ Although there exists no rectangular grid that contains exactly two million rect
 Find the least value of n for which p(n) is divisible by one million.
 """
 
-import itertools
-import functools
-
 def count_rectangles_in_grid(h: int, v: int) -> int:
     count = 0
     for xs in range(1, h + 1):

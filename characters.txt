@@ -1,7 +1,8 @@
 
 These are characters to be used in the problem descriptions.
 
-Multiplication ...... : ×
-Right arrow ......... : →
-Squared ............. : ²
-Phi ................. : φ
+Multiplication .......... : ×
+Right arrow ............. : →
+Squared ................. : ²
+Phi ..................... : φ
+Less-than-or-equal ...... : ≤

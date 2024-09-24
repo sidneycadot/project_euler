@@ -18,12 +18,15 @@ Note: As 1! = 1 and 2! = 2 are not sums they are not included.
 
 from pelib import factorial
 
-def is_curious(n: int):
-    return sum(factorial(int(c)) for c in str(n)) == n
-
 def solve() -> int:
-    # From eight digits onwards, the minimum value an n-digit number can have exceeds the maximum value attainable by multiplying its digits.
-    return sum(n for n in range(3, 10000000) if is_curious(n))
+    # The maximum sum-of-digit-factorials for a k-digit number is (9!)*k == 362880*k.
+    # The minimum value of a k-digit number is 10**(k-1).
+    # From 8 digits onwards, the minimum value of the number exceeds the sum-of-digit-factorials
+    # that can be reached; therefore, we only need to test numbers below 10**8.
+
+    digit_factorial = dict((str(d), factorial(d)) for d in range(10))
+
+    return sum(n for n in range(10, 10000000) if sum(digit_factorial[c] for c in str(n)) == n)
 
 def main():
     solution = solve()

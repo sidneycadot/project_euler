@@ -96,7 +96,7 @@ known_solutions: dict[int, ProblemDescription] = {
     69 : ProblemDescription(   69, "Totient Maximum"                          , 10 ,           510510 , P.UNKNOWN),
     70 : ProblemDescription(   70, "Totient Permutation"                      , 20 ,          8319823 , P.SLOW   ),
     71 : ProblemDescription(   71, "Ordered Fractions"                        , 10 ,             None , P.UNKNOWN),
-    72 : ProblemDescription(   72, "Counting Fractions"                       , 20 ,             None , P.UNKNOWN),
+    72 : ProblemDescription(   72, "Counting Fractions"                       , 20 ,     303963552391 , P.UNKNOWN),
     73 : ProblemDescription(   73, "Counting Fractions in a Range"            , 15 ,             None , P.UNKNOWN),
     74 : ProblemDescription(   74, "Digit Factorial Chains"                   , 15 ,             None , P.UNKNOWN),
     75 : ProblemDescription(   75, "Singular Integer Right Triangles"         , 25 ,             None , P.UNKNOWN),
@@ -153,7 +153,7 @@ def main():
 
         assert problem_index == problem.index
 
-        if not (1 <= problem.index <= 50):
+        if not (34 <= problem.index <= 34):
             continue
 
         directory = f"p_{problem.index:06d}"
